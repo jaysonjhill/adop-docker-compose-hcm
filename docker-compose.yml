@@ -8,7 +8,6 @@
   net: ${CUSTOM_NETWORK_NAME}
   ports:
     - "80:80"
-    - "443:443"
   environment:
     - "constraint:tier==public"
     - "LDAP_SERVER=ldap:389"
@@ -36,8 +35,8 @@
   #build: ../images/docker-ldap/
   image: accenture/adop-ldap:0.1.2
   net: ${CUSTOM_NETWORK_NAME}
-  expose:
-    - "389"
+  ports:
+    - "389:389"
   environment:
     INITIAL_ADMIN_USER: ${INITIAL_ADMIN_USER}
     INITIAL_ADMIN_PASSWORD: ${INITIAL_ADMIN_PASSWORD}
