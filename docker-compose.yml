@@ -323,10 +323,10 @@
     LDAP_SERVER_BASE_DN: "${LDAP_FULL_DOMAIN}"
 
  tomcat:
-  container_name: tomcat
+  image: jaysonjhill/hcm-tomcat:0.1.0
   net: ${CUSTOM_NETWORK_NAME}
   restart: always
-  image: tomcat
+  container_name: tomcat
   ports:
    - "443:8080"
 
