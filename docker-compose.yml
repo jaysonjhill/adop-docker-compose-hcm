@@ -3,12 +3,11 @@
  proxy:
   container_name: proxy
   restart: always
-  image: poln/nginx-php:0.9.1
+  image: jaysonjhill/hcm-nginx:0.1.0
   #build: ../images/docker-nginx/
   net: ${CUSTOM_NETWORK_NAME}
   ports:
     - "80:80"
-    - "443:443"
   environment:
     - "constraint:tier==public"
     - "LDAP_SERVER=ldap:389"
